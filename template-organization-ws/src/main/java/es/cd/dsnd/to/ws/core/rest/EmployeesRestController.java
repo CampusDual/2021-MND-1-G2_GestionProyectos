@@ -5,20 +5,19 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import es.cd.dsnd.to.api.core.service.ITemplateOrganization;
+import es.cd.dsnd.to.api.core.service.IEmployeesService;
 import com.ontimize.jee.server.rest.ORestController;
 
 @RestController
-@RequestMapping("/master")
-@ComponentScan(basePackageClasses = { es.cd.dsnd.to.api.core.service.ITemplateOrganization.class })
-public class TemplateOrganizationRestController extends ORestController<ITemplateOrganization> {
+@RequestMapping("/employees")
+public class EmployeesRestController extends ORestController<IEmployeesService> {
 
 	@Autowired
-	private ITemplateOrganization TemplateOrganization;
+	private IEmployeesService TemplateOrganization;
 
 	@Override
 
-	public ITemplateOrganization getService() {
+	public IEmployeesService getService() {
 		return this.TemplateOrganization;
 	}
 

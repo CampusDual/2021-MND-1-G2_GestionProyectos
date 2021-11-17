@@ -6,7 +6,7 @@ import java.util.Map;
 import com.ontimize.jee.common.dto.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 
-public interface ITemplateOrganization {
+public interface IEmployeesService {
 	
 
  public EntityResult employeeQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;

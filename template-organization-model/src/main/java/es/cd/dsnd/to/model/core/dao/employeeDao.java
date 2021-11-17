@@ -7,10 +7,10 @@ import org.springframework.stereotype.Repository;
 import com.ontimize.jee.server.dao.common.ConfigurationFile;
 import com.ontimize.jee.server.dao.jdbc.OntimizeJdbcDaoSupport;
 
-@Repository("employeeDao")
+@Repository("EmployeeDao")
 @Lazy
-@ConfigurationFile(configurationFile = "dao/employeeDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
-public class employeeDao extends OntimizeJdbcDaoSupport{
+@ConfigurationFile(configurationFile = "dao/EmployeeDao.xml", configurationFilePlaceholder = "dao/placeholders.properties")
+public class EmployeeDao extends OntimizeJdbcDaoSupport{
 
  public static final String employee_id = "employee_id";
  public static final String name_surname = "name_surname";
