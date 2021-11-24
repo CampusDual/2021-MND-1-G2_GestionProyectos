@@ -16,4 +16,5 @@ public class EPDao extends OntimizeJdbcDaoSupport{
  public static final String project_id = "project_id";
  public static final String ep_id= "ep_id";
  public static final String percentage="percentage";
+ public static final String query_info_projects = "info_projects";
 }
