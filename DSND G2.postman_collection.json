@@ -1,0 +1,414 @@
+{
+	"info": {
+		"_postman_id": "16b15a56-4f81-412e-96f3-b6aa6f98af5f",
+		"name": "DSND G2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Employees",
+			"item": [
+				{
+					"name": "Create Employee",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"function\": \"Programmer\",\r\n        \"name_surname\": \"Iñigo Montoya\",\r\n        \"email\": \"imontoya@newvision.com\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"function\": 12,\r\n        \"name_surname\": 12,\r\n        \"email\": 12\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:33333/employees/employee",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"employees",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Show employee list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:33333/employees/employee?columns=employee_id,name_surname,email,speciality,function",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"employees",
+								"employee"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "employee_id,name_surname,email,speciality,function"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Employee",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\"filter\":{\"employee_id\": 15},\r\n\r\n\"columns\":[\r\n\"employee_id\",\r\n\"name_surname\",\r\n\"email\",\r\n\"speciality\",\r\n\"function\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:33333/employees/employee/search",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"employees",
+								"employee",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"filter\" :{\n\t\t\"employee_id\" :16\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/employees/employee",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"employees",
+								"employee"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "Request search",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"project_id\": 1\r\n    },\r\n    \"columns\": [\r\n        \"project_id\",\r\n        \"project_name\",\r\n        \"description\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:33333/projects/project/search",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"projects",
+								"project",
+								"search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project list",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"filter\": {\r\n        \"project_id\": 1\r\n    },\r\n    \"columns\": [\"project_id\",\r\n    \"project_name\",\r\n    \"description\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:33333/projects/project?columns=project_id,project_name,description",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"projects",
+								"project"
+							],
+							"query": [
+								{
+									"key": "columns",
+									"value": "project_id,project_name,description"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Project",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"project_name\": \"Omega Project\",\r\n        \"description\": \"Web development\"\r\n    },\r\n    \"sqltypes\": {\r\n        \"project_id\": 4,\r\n        \"description\": 12,\r\n        \"project_name\": 12\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:33333/projects/project",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"projects",
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Project",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"filter\" :{\n\t\t\"project_id\" :5\n\t}\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:33333/projects/project",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"projects",
+								"project"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request Info Projects",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "demouser",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "demo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"columns\" : [\"employee_id\", \"project_id\", \"ep_id\", \"percentage\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:33333/projects/info_projects/search",
+							"host": [
+								"localhost"
+							],
+							"port": "33333",
+							"path": [
+								"projects",
+								"info_projects",
+								"search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

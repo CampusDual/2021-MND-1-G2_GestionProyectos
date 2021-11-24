@@ -14,28 +14,14 @@
  <GeneratedKey>ep_id</GeneratedKey>
  
   <Queries>
-  <Query id="info_projects">
-   <AmbiguousColumns>
-    <AmbiguousColumn name="employee" prefix="emp"
-     databaseName="employee_id" />
-    <AmbiguousColumn name="employee_project" prefix="employe"
-     databaseName="employee_id" />
-    <AmbiguousColumn name="project" prefix="pro"
-     databaseName="project_id" />
-    <AmbiguousColumn name="employee_project" prefix="emplo"
-     databaseName="project_id" />
-   </AmbiguousColumns>
+  <Query id="default">
    <Sentence>
    <![CDATA[
-     SELECT
-     #COLUMNS#
-     FROM
-      public.employee_project EP
-     inner join public.employee e on
-      EP.employe = e.emp
-     inner join public.project p on
-      EP.pro = p.emplo
-     #WHERE#
+	    SELECT
+			#COLUMNS#
+		FROM
+			vinfo_projects_employees
+		#WHERE#
    ]]>
    </Sentence>
   </Query>
