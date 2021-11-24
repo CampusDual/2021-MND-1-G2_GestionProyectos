@@ -1,8 +1,8 @@
 {
 	"info": {
-		"_postman_id": "16b15a56-4f81-412e-96f3-b6aa6f98af5f",
-		"name": "DSND G2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"_postman_id": "7673723e-8c3a-4cb5-b7e7-60f386151d1c",
+		"name": "Template Organization",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
 	},
 	"item": [
 		{
@@ -13,18 +13,10 @@
 					"request": {
 						"auth": {
 							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "demouser",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "demo",
-									"type": "string"
-								}
-							]
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
 						},
 						"method": "POST",
 						"header": [],
@@ -37,17 +29,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:33333/employees/employee",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"employees",
-								"employee"
-							]
-						}
+						"url": "localhost:33333/employees/employee"
 					},
 					"response": []
 				},
@@ -59,18 +41,10 @@
 					"request": {
 						"auth": {
 							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "demouser",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "demo",
-									"type": "string"
-								}
-							]
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
 						},
 						"method": "GET",
 						"header": [],
@@ -108,18 +82,10 @@
 					"request": {
 						"auth": {
 							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "demouser",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "demo",
-									"type": "string"
-								}
-							]
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
 						},
 						"method": "POST",
 						"header": [],
@@ -132,23 +98,12 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:33333/employees/employee/search",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"employees",
-								"employee",
-								"search"
-							]
-						}
+						"url": "localhost:33333/employees/employee/search"
 					},
 					"response": []
 				},
 				{
-					"name": "Delete Employee",
+					"name": "Delete Employee(TO-36)",
 					"request": {
 						"method": "DELETE",
 						"header": [],
@@ -161,18 +116,32 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://localhost:33333/employees/employee",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"employees",
-								"employee"
-							]
-						}
+						"url": "http://localhost:33333/employees/employee"
+					},
+					"response": []
+				},
+				{
+					"name": "Request percentage employee in projects(TO-39)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"columns\" : [\"name_surname\", \"percentage\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:33333/projects/info_projects/search"
 					},
 					"response": []
 				}
@@ -186,18 +155,10 @@
 					"request": {
 						"auth": {
 							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "demouser",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "demo",
-									"type": "string"
-								}
-							]
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
 						},
 						"method": "POST",
 						"header": [],
@@ -210,18 +171,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:33333/projects/project/search",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"projects",
-								"project",
-								"search"
-							]
-						}
+						"url": "localhost:33333/projects/project/search"
 					},
 					"response": []
 				},
@@ -233,18 +183,10 @@
 					"request": {
 						"auth": {
 							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "demouser",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "demo",
-									"type": "string"
-								}
-							]
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
 						},
 						"method": "GET",
 						"header": [],
@@ -282,18 +224,10 @@
 					"request": {
 						"auth": {
 							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "demouser",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "demo",
-									"type": "string"
-								}
-							]
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
 						},
 						"method": "POST",
 						"header": [],
@@ -306,37 +240,19 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:33333/projects/project",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"projects",
-								"project"
-							]
-						}
+						"url": "localhost:33333/projects/project"
 					},
 					"response": []
 				},
 				{
-					"name": "Delete Project",
+					"name": "Delete Project(TO-37)",
 					"request": {
 						"auth": {
 							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "demouser",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "demo",
-									"type": "string"
-								}
-							]
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
 						},
 						"method": "DELETE",
 						"header": [],
@@ -349,18 +265,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "http://localhost:33333/projects/project",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"projects",
-								"project"
-							]
-						}
+						"url": "http://localhost:33333/projects/project"
 					},
 					"response": []
 				},
@@ -369,18 +274,10 @@
 					"request": {
 						"auth": {
 							"type": "basic",
-							"basic": [
-								{
-									"key": "password",
-									"value": "demouser",
-									"type": "string"
-								},
-								{
-									"key": "username",
-									"value": "demo",
-									"type": "string"
-								}
-							]
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
 						},
 						"method": "POST",
 						"header": [],
@@ -393,18 +290,57 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "localhost:33333/projects/info_projects/search",
-							"host": [
-								"localhost"
-							],
-							"port": "33333",
-							"path": [
-								"projects",
-								"info_projects",
-								"search"
-							]
-						}
+						"url": "localhost:33333/projects/info_projects/search"
+					},
+					"response": []
+				},
+				{
+					"name": "Request percentage employee_project(TO-40)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"columns\" : [\"project_name\", \"name_surname\", \"percentage\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:33333/projects/info_projects/search"
+					},
+					"response": []
+				},
+				{
+					"name": "Insert employee in projects(TO-38)",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "demouser",
+								"username": "demo"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"data\": {\r\n        \"ep_id\":19,\r\n        \"employee_id\": 8,\r\n        \"name_surname\":\"Lucia De La Fuente\",\r\n        \"project_id\": 3,\r\n        \"percentage\": 50\r\n    },\r\n    \"sqltypes\": {\r\n        \"project_id\": 4,\r\n        \"description\": 12,\r\n        \"project_name\": 12\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:33333/projects/info_projects"
 					},
 					"response": []
 				}
