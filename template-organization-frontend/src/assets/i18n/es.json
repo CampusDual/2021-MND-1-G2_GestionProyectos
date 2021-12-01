@@ -19,5 +19,12 @@
   "FORGOT_PWD": "¿Has olvidado tu contraseña?",
   "FOOTER_CREATED_BY": "Creado por Imatia Innovation",
   "FOOTER_RIGHTS": "Todos los derechos reservados",
-  "EMPLOYEES": "Empleados"
+  "Employees": "Empleados",
+  "name_surname": "Nombre y apellidos",
+  "email": "Email",
+  "speciality": "Especialidad",
+  "function": "Función",
+  "Projects": "Proyectos",
+  "project_name": "Nombre de proyecto",
+  "description": "Descripción"
 }
