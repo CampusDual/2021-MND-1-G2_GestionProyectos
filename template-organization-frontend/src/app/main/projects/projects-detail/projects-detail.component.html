@@ -1,0 +1,14 @@
+<o-form service="projects" entity="project" keys="project_id" header-actions="R;I;U;D" show-header-navigation="no">
+  <o-text-input attr="project_id" sql-type="INTEGER" enabled="no" hidden></o-text-input>
+  <o-row>
+    <o-column title-label="PROJECTS_INFORMATION" fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="project_name" fxFlex="40" required="yes"></o-text-input>
+      </o-row>
+      <o-row>
+        <o-text-input attr="description" fxFlex></o-text-input>
+      </o-row>
+    </o-column>
+  </o-row>
+  <o-table fxFlex="50" attr="percentage_in_projects" service="projects" entity="info_projects" keys="ep_id" columns="percentage;name_surname;employee_id;ep_id" visible-columns="name_surname;percentage" parent-keys="project_id"></o-table>
+</o-form>

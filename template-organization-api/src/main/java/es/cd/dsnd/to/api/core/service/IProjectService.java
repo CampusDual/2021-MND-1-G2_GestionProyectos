@@ -32,16 +32,4 @@ public interface IProjectService {
 
 	public EntityResult info_projectsDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
 
-	// EMPLOYEE_PROJECTS
-	
-	public EntityResult employee_projectQuery(Map<String, Object> keyMap, List<String> attrList)
-			throws OntimizeJEERuntimeException;
-
-	public EntityResult employee_projectInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
-
-	public EntityResult employee_projectUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
-			throws OntimizeJEERuntimeException;
-
-	public EntityResult employee_projectDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
-
 }

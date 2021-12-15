@@ -1,7 +1,6 @@
 package es.cd.dsnd.to.model.core.service;
 
 import java.util.List;
-
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +12,8 @@ import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 
 import es.cd.dsnd.to.api.core.service.IProjectService;
-import es.cd.dsnd.to.model.core.dao.ProjectDao;
-import es.cd.dsnd.to.model.core.dao.EmployeeDao;
 import es.cd.dsnd.to.model.core.dao.EPDao;
+import es.cd.dsnd.to.model.core.dao.ProjectDao;
 
 @Service("ProjectService")
 @Lazy
@@ -25,8 +23,6 @@ public class ProjectService implements IProjectService {
 	
 	@Autowired
 	private ProjectDao ProjectDao;
-	@Autowired
-	private EmployeeDao EmployeeDao;
 	@Autowired
 	private EPDao EPDao;
 	@Autowired
@@ -77,30 +73,4 @@ public class ProjectService implements IProjectService {
 	public EntityResult info_projectsDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
 		return this.daoHelper.delete(this.EPDao, keyMap);
 	}
-
-	//EMPLOYEE_PROJECT
-	
-	@Override
-	public EntityResult employee_projectQuery(Map<String, Object> keyMap, List<String> attrList)
-			throws OntimizeJEERuntimeException {
-		return this.daoHelper.query(this.EmployeeDao, keyMap, attrList);
-	}
-
-	@Override
-	public EntityResult employee_projectInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-		
-		return this.daoHelper.insert(this.EmployeeDao, attrMap);
-	}
-
-	@Override
-	public EntityResult employee_projectUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
-			throws OntimizeJEERuntimeException {
-		return this.daoHelper.update(this.EmployeeDao, attrMap, keyMap);
-	}
-
-	@Override
-	public EntityResult employee_projectDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
-		return this.daoHelper.delete(this.EmployeeDao, keyMap);
-	}
-
 }

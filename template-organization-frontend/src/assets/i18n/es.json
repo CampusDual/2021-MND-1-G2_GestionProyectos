@@ -26,5 +26,7 @@
   "function": "Función",
   "Projects": "Proyectos",
   "project_name": "Nombre de proyecto",
-  "description": "Descripción"
+  "description": "Descripción",
+  "EMPLOYEES": "EMPLEADOS",
+  "PROJECTS": "PROYECTOS"
 }

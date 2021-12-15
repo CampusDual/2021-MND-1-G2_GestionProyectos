@@ -26,8 +26,7 @@
   "function": "Fuction",
   "Projects": "Projects",
   "project_name": "Project name",
-  "description": "Description"
-
-  
-
+  "description": "Description",
+  "EMPLOYEES": "EMPLOYEES",
+  "PROJECTS": "PROJECTS"
 }

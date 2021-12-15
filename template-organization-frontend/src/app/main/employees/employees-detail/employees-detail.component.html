@@ -1,0 +1,20 @@
+<o-form service="employees" entity="employee" keys="employee_id" header-actions="R;I;U;D" show-header-navigation="no">
+  <o-text-input attr="employee_id" sql-type="INTEGER" enabled="no" oHidden></o-text-input>
+  <o-row>
+    <o-column title-label="EMPLOYEES_PERSONAL_INFORMATION" fxFlex="50">
+      <o-row>
+        <o-text-input attr="name_surname" required="yes"></o-text-input>
+      </o-row>
+      <o-row>
+        <o-email-input attr="email" fxFlex></o-email-input>
+      </o-row>
+      <o-row>
+        <o-text-input attr="speciality" fxFlex></o-text-input>
+      </o-row>
+      <o-row>
+        <o-text-input attr="function" fxFlex></o-text-input>
+      </o-row>
+    </o-column>
+  </o-row>
+  <o-table fxFlex="50" quick-filter="no" attr="percentage_in_projects" service="projects" entity="info_projects" keys="ep_id" columns="percentage;project_name;employee_id;ep_id" visible-columns="project_name;percentage" parent-keys="employee_id"></o-table>
+</o-form>
