@@ -1,7 +1,6 @@
 package es.cd.dsnd.to.model.core.dao;
 
-
-	import org.springframework.context.annotation.Lazy;
+import org.springframework.context.annotation.Lazy;
 	import org.springframework.stereotype.Repository;
 
 	import com.ontimize.jee.server.dao.common.ConfigurationFile;
@@ -15,5 +14,7 @@ package es.cd.dsnd.to.model.core.dao;
 	 public static final String project_id="project_id";
 	 public static final String project_name = "project_name";
 	 public static final String description = "description";
+	 public static final String start_date = "start_date";
+	 public static final String end_date = "end_date";
 
 }

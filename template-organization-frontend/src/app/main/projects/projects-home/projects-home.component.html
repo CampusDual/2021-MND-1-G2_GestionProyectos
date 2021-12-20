@@ -1,9 +1,11 @@
 <o-form-layout-manager title="{{'PROJECTS' | oTranslate }}" separator=" " mode="tab" label-columns="project_name">
   <div fxFill fxLayout="column" fxLayoutAlign="start">
       <o-table fxFlex attr="projectsTable" service="projects" entity="project" keys="project_id"
-        columns="project_id;project_name;description"
-        visible-columns="project_name;description" query-rows="20">
+        columns="project_id;project_name;description;start_date;end_date"
+        visible-columns="project_name;description;start_date;end_date" query-rows="20">
            <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
+           <o-table-column attr="start_date" title="start_date" type="date"></o-table-column>
+           <o-table-column attr="end_date" title="end_date" type="date"></o-table-column>
       </o-table>
       </div>
     </o-form-layout-manager>

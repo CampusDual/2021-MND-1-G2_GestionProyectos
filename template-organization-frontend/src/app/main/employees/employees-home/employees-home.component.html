@@ -1,8 +1,8 @@
 <o-form-layout-manager title="{{'EMPLOYEES' | oTranslate }}" separator=" " mode="tab" label-columns="name_surname">
 <div fxFill fxLayout="column" fxLayoutAlign="start">
     <o-table fxFlex attr="employeeTable" service="employees" entity="employee" keys="employee_id"
-      columns="employee_id;name_surname;email;speciality;function"
-      visible-columns="name_surname;email;speciality;function" query-rows="20">
+      columns="employee_id;name_surname;email;speciality;function;department"
+      visible-columns="name_surname;email;speciality;function;department" query-rows="20">
          <o-table-column attr="ID" title="ID" width="100px"></o-table-column>
     </o-table> 
     </div>

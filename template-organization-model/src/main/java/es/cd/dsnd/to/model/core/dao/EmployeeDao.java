@@ -17,5 +17,6 @@ public class EmployeeDao extends OntimizeJdbcDaoSupport{
  public static final String email = "email";
  public static final String speciality = "speciality";
  public static final String function = "function";
+ public static final String department = "department";
  
 }

@@ -28,5 +28,9 @@
   "project_name": "Nombre de proyecto",
   "description": "Descripción",
   "EMPLOYEES": "EMPLEADOS",
-  "PROJECTS": "PROYECTOS"
+  "PROJECTS": "PROYECTOS",
+  "percentage": "Porcentaje",
+  "start_date": "Fecha de inicio",
+  "end_date": "Fecha de fin",
+  "department": "Departamento"
 }
