@@ -1,5 +1,7 @@
 package es.cd.dsnd.to.model.core.service;
 
+import java.util.ArrayList;
+
 import java.util.List;
 
 import java.util.Map;
@@ -13,15 +15,19 @@ import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 
 import es.cd.dsnd.to.api.core.service.IEmployeesService;
-
+import es.cd.dsnd.to.model.core.dao.EPDao;
 import es.cd.dsnd.to.model.core.dao.EmployeeDao;
+import es.cd.dsnd.to.model.core.dao.ProjectDao;
 
 @Service("EmployeesService")
 @Lazy
 public class EmployeesService implements IEmployeesService {
+	
 
 	@Autowired
 	private EmployeeDao employeeDao;
+	@Autowired
+	private ProjectDao projectDao;
 	@Autowired
 	private DefaultOntimizeDaoHelper daoHelper;
 
@@ -44,7 +50,10 @@ public class EmployeesService implements IEmployeesService {
 
 	@Override
 	public EntityResult employeeDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		
 		return this.daoHelper.delete(this.employeeDao, keyMap);
 	}
 
-}
+	}
+
+

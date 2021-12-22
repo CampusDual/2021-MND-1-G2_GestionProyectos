@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+div.mat-tab-label-content{
+    font-weight: bolder;
+}
+
+div.mat-tab-label-content > span{
+    font-weight: normal;
+}
