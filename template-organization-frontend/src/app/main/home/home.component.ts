@@ -20,5 +20,4 @@ export class HomeComponent implements OnInit {
   navigate() {
     this.router.navigate(['../', 'login'], { relativeTo: this.actRoute });
   }
-
 }

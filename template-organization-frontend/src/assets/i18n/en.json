@@ -32,5 +32,8 @@
   "percentage": "Percentage",
   "start_date": "Start_date",
   "end_date": "End_date",
-  "department": "Department"
+  "department": "Department",
+  "telephone_number": "Telephone number",
+  "address": "Address",
+  "MODULES": "Modules"
 }
