@@ -20,7 +20,6 @@ component: EmployeesNewComponent
   path: ':employee_id',
 component: EmployeesDetailComponent
 }
-
 ];
 
 @NgModule({

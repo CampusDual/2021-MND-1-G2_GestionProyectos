@@ -1,15 +1,17 @@
 package es.cd.dsnd.to.model.core.service;
 
 import java.util.ArrayList;
-
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import com.ontimize.jee.common.dto.EntityResult;
+import com.ontimize.jee.common.dto.EntityResultMapImpl;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 
@@ -77,7 +79,65 @@ public class ProjectService implements IProjectService {
 
 	@Override
 	public EntityResult info_projectsInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-		return this.daoHelper.insert(this.epDao, attrMap);
+		EntityResult toRet = new EntityResultMapImpl();
+		toRet.setCode(EntityResult.OPERATION_WRONG);
+		Map<String, Object> info_project_key = new HashMap<String, Object>();
+		info_project_key.put(EPDao.project_id, attrMap.get(EPDao.project_id));
+		List<String> info_project_employee_attr = new ArrayList<String>();
+		info_project_employee_attr.add(EPDao.employee_id);
+		EntityResult info_projectsQuery = this.info_projectsQuery(info_project_key, info_project_employee_attr);
+		
+		if (info_projectsQuery.getCode() != EntityResult.OPERATION_WRONG) {
+			
+			Map<String, Object> info_project_employee_id = new HashMap<String, Object>();
+			info_project_employee_id.put(EPDao.employee_id, attrMap.get(EPDao.employee_id));
+			int recordIndex = info_projectsQuery.getRecordIndex(info_project_employee_id);
+			
+			if (recordIndex < 0) {
+				boolean allowInsert = checkEmployeeWorkload(info_project_employee_id, attrMap.get(EPDao.percentage));
+				
+				if (allowInsert) {
+					return this.daoHelper.insert(this.epDao, attrMap);					
+				}else {
+					toRet.setMessage("El porcentaje de dedicación de una persona no puede superar el 100%");
+					return toRet;
+				}
+				
+			}else {
+				toRet.setMessage("El empleado ya trabaja en este proyecto");
+				return toRet;
+			}
+		}
+		
+		toRet.setMessage("Se ha producido un error consultando la relación de proyectos y empleados");
+		return toRet;
+		
+		
+	}
+
+	private boolean checkEmployeeWorkload(Map<String, Object> info_project_employee_id, Object percentage) {
+		List<String> info_project_employee_load_attr = new ArrayList<String>();
+		info_project_employee_load_attr.add(EPDao.percentage);
+		EntityResult info_projectsQuery = this.info_projectsQuery(info_project_employee_id, info_project_employee_load_attr);
+		
+		if (info_projectsQuery.getCode() != EntityResult.OPERATION_WRONG) {
+			
+			int total_workload = 0;
+			for (int i = 0; i < info_projectsQuery.calculateRecordNumber(); i++) {
+				Map recordValues = info_projectsQuery.getRecordValues(i);
+	
+				total_workload += (int) recordValues.get(EPDao.percentage);
+			}
+			total_workload += (int) percentage;
+			
+			if (total_workload <= 100) {
+				return true;
+			}
+			
+		}
+		
+		return false;
+	
 	}
 
 	@Override
