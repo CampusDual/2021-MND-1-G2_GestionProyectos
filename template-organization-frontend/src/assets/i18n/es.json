@@ -35,5 +35,6 @@
   "department": "Departamento",
   "telephone_number": "Número de teléfono",
   "address": "Dirección",
-  "MODULES": "Módulos"
+  "MODULES": "Módulos",
+  "employee_id": "Empleado"
 }

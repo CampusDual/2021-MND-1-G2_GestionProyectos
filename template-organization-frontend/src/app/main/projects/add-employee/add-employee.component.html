@@ -1,7 +1,7 @@
 <o-form service="projects" query-on-init="no" entity="info_projects" keys="ep_id">
     <o-list-picker attr="employee_id" service="employees" entity="employee" keys="employee_id" value-column="employee_id" 
        columns="employee_id;name_surname" visible-columns="name_surname"
-       required="yes"></o-list-picker>
+       required="yes" fxFlex="50"></o-list-picker>  
 
-<o-integer-input attr="percentage" required="yes"></o-integer-input>
+<o-integer-input attr="percentage" required="yes" fxFlex="50"></o-integer-input>
 </o-form>
