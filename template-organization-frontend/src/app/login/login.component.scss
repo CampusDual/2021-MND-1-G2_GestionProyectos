@@ -22,11 +22,11 @@
     overflow: auto;
 
     .login-bg-container {
-      background-image: url('^assets/images/login_bg.png');
+      background-image: url('../../assets/images/log\ in.png');
       width: calc(100% - 640px);
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: center;
+      background-position: 32% 0%;
       position: relative;
       z-index: 1;
     }
@@ -131,7 +131,7 @@
   .full-page {
     .login-outer-container {
       .wrapp-login {
-        width: 100%;
+        width: 80%;
         min-height: 100%;
 
         .login-inner-container {
